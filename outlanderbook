@@ -1,0 +1,51 @@
+/* Create table about the people and what they do here */
+CREATE TABLE persons (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    occupation TEXT,
+    birthday INTEGER,
+    married TEXT);
+    
+INSERT INTO persons (fullname, occupation, birthday, married) VALUES ("Claire Fraser", "Healer", 1918, "Yes");
+INSERT INTO persons (fullname, occupation, birthday, married) VALUES ("Jamie Fraser", "Soldier", 1721, "Yes");
+INSERT INTO persons (fullname, occupation, birthday, married) VALUES ("Frank Randall", "Historian", 1906, "Yes");
+INSERT INTO persons (fullname, occupation, birthday, married) VALUES ("Brianna Randall", "Engineer", 1948, "Yes");
+INSERT INTO persons (fullname, occupation, birthday, married) VALUES ("Roger MacKenzie", "Historian", 1941, "Yes");
+INSERT INTO persons (fullname, occupation, birthday, married) VALUES ("Fergus Claudel Fraser", "Pickpocket",1735,"Yes");
+INSERT INTO persons (fullname, occupation, birthday, married) VALUES ("Marsali MacKimmie Fraser", "Mother", 1751, "Yes");
+INSERT INTO persons (fullname, occupation, birthday, married) VALUES ("Jeremiah MacKenzie", "Underage", 1770, "No");
+
+/*Who is married to whom*/    
+ CREATE TABLE family(  
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    spouse_id INTEGER,
+    child_id INTEGER);
+INSERT INTO family (spouse_id, child_id) VALUES (2,4);
+INSERT INTO family (spouse_id, child_id) VALUES (1,4);
+INSERT INTO family (spouse_id, child_id) VALUES (1,4);
+INSERT INTO family (spouse_id, child_id) VALUES (5,8);
+INSERT INTO family (spouse_id, child_id) VALUES (4,8);
+INSERT INTO family (spouse_id, child_id) VALUES (7,NULL);
+INSERT INTO family (spouse_id, child_id) VALUES (6,NULL);
+INSERT INTO family (spouse_id, child_id) VALUES (NULL, NULL);
+
+/*Where they grew up vs Where they live now*/
+ CREATE TABLE dwelling_places(  
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    birthplace TEXT,
+    current_residence TEXT);
+INSERT INTO dwelling_places (name, birthplace, current_residence) VALUES ("Claire", "London, England", "Frasers Ridge, North Carolia");
+INSERT INTO dwelling_places (name, birthplace, current_residence) VALUES ("Jamie", "Lallybroch, Scotland","Frasers Ridge, North Carolia");
+INSERT INTO dwelling_places (name, birthplace, current_residence) VALUES ("Frank", "England", "Boston, Massachusetts");
+INSERT INTO dwelling_places (name, birthplace, current_residence) VALUES ("Brianna", "Boston, Massachusetts", "Frasers Ridge, North Carolia");
+INSERT INTO dwelling_places (name, birthplace, current_residence) VALUES ("Roger", "Kyle of Lochalsh, Scotland", "Frasers Ridge, North Carolia");
+INSERT INTO dwelling_places (name, birthplace, current_residence) VALUES ("Fergus","France", "Frasers Ridge, North Carolia");
+INSERT INTO dwelling_places (name, birthplace, current_residence) VALUES ("Marsali", "Lallybroch, Scotland",  "Frasers Ridge, North Carolia");
+INSERT INTO dwelling_places (name, birthplace, current_residence) VALUES ("Jeremiah", "River Run, North Carolina", "Frasers Ridge, North Carolia");
+
+SELECT b.fullname as Name, a.fullname as Spouse FROM family
+    LEFT OUTER JOIN persons a
+    ON family.spouse_id = a.id
+    LEFT OUTER JOIN persons b
+    ON family.id = b.id;
