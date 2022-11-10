@@ -1,0 +1,16 @@
+CREATE TABLE Favorite_Books (id INTEGER PRIMARY KEY, name TEXT, author TEXT, genre TEXT, year released INTEGER, rating INTEGER);
+
+INSERT INTO Favorite_books VALUES (1, "Seven Husbands of Evelyn Hugo", "Taylor Jenkins Reid","Historical Fiction", 2017, 5);
+INSERT INTO Favorite_books VALUES (2, "You are a badass", "Jen Sincero","Self Help", 2013, 4);
+INSERT INTO Favorite_books VALUES (3, "Circe", "Madeline Miller", "Fantasy", 2018, 5);
+INSERT INTO Favorite_books VALUES (4, "Big Magic", "Elizabeth Gilbert", "Self Help", 2015, 4);
+INSERT INTO Favorite_Books VALUES (5, "Project Hail Mary", "Andy Weir", "Science Fiction", 2021, 5);
+INSERT INTO Favorite_Books VALUES (6, "Daisy Jones & The Six", "Taylor Jenkins Reid", "Historical Fiction", 2019, 3);
+INSERT INTO Favorite_Books VALUES (7, "Scythe", "Neal Shusterman", "Science Fiction", 2016, 5);
+INSERT INTO Favorite_Books VALUES (8, "Thunderhead", "Neal Shusterman", "Science Fiction", 2018, 4);
+INSERT INTO Favorite_Books VALUES (9, "The Toll", "Neal Shusterman", "Science Fiction", 2019, 4);
+INSERT INTO Favorite_Books VALUES (10, "A Court of Thorns and Roses", "Sarah J. Mass", "Fantasy", 2015, 3);
+INSERT INTO Favorite_Books VALUES (11, "A Court of Mist and Fury", "Sarah J. Mass", "Fantasy", 2016, 4);
+INSERT INTO Favorite_Books VALUES (12, "A Court of Wings and Ruin", "Sarah J. Mass", "Fantasy", 2017, 3);
+
+Select * From Favorite_Books;
